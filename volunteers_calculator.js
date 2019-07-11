@@ -62,10 +62,13 @@ var VolunteersCalculator = module.exports = function(){
 
     getResults: function(volunteers) {
       this.results = [];
+      var loggedSortedResults = [];
       for(var i = 0; i < volunteers.length; i++) { 
         var result = (volunteers[i]+" additional volunteers are needed on day "+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
-        this.results.push(result)
+        this.results.push(result);
+        loggedSortedResults.push(key : volunteers[i])
         console.log(result)
+        console.log(loggedSortedResults)
       }
       return this.results;
     },
