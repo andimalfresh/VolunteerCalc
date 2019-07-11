@@ -10,6 +10,7 @@ var VolunteersCalculator = module.exports = function(){
     daysCount: null,
     data: null,
     results: null,
+    dayOfWeek: null,
 
     processFile: function(f, done) {
       var self = this;
@@ -29,8 +30,8 @@ var VolunteersCalculator = module.exports = function(){
     },
 
     dayCount: function() {
-      var dayCount = this.data.length;
-      return this.dayCount;
+      var daysCount = this.data.length;
+      return this.daysCount;
     },
 
     getVolunteersNeeded: function() {
@@ -46,10 +47,23 @@ var VolunteersCalculator = module.exports = function(){
       return volunteersNeeded;
     },
 
+    getDayOfWeek: function() {
+      if (this.dayOfWeek !== null) {
+        return this.dayOfWeek;
+      }
+
+     this.dayOfWeek = [];
+     for (var i = 0 ; i < this.daysCount; i++) {
+        var day = this.data[i][0];
+        this.dayOfWeek.push(day);
+     }
+      return this.dayOfWeek
+    },
+
     getResults: function(volunteers) {
       this.results = [];
-      for(var i = 0; i< volunteers.length; i++) {
-        var result = (volunteers[i]+" additional volunteers are needed on day "+i)
+      for(var i = 0; i < volunteers.length; i++) { 
+        var result = (volunteers[i]+" additional volunteers are needed on day "+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
         this.results.push(result)
         console.log(result)
       }
