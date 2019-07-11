@@ -63,7 +63,7 @@ var VolunteersCalculator = module.exports = function(){
 
       this.bagsStillNeeded = [];
       for(var i = 0; i < this.daysCount; i++) {
-        var bags = (this.data[i][1]- this.data[i][2]);
+        var bags = (this.data[i][2]- this.data[i][3]);
         this.bagsStillNeeded.push(bags);
       };
       return this.bagsStillNeeded;
@@ -76,8 +76,8 @@ var VolunteersCalculator = module.exports = function(){
 
       this.bagsStockedPerVolunteer = [];
       for(var i = 0; i < this.daysCount; i++) {
-        var bagsStocked = this.data[i][2];
-        var volunteers = this.data[i][0];
+        var bagsStocked = this.data[i][3];
+        var volunteers = this.data[i][1];
 
         this.bagsStockedPerVolunteer.push((bagsStocked/volunteers));
       };
