@@ -62,14 +62,20 @@ var VolunteersCalculator = module.exports = function(){
 
     getResults: function(volunteers) {
       this.results = [];
-      var loggedSortedResults = [];
       for(var i = 0; i < volunteers.length; i++) { 
         var result = (volunteers[i]+" additional volunteers are needed on day "+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
         this.results.push(result);
-        loggedSortedResults.push(key : volunteers[i])
         console.log(result)
-        console.log(loggedSortedResults)
       }
+      this.results.sort( function(a,b){
+        // console.log(a,b)
+        var slicedResultA = a.slice(0,5)
+        var slicedResultB = b.slice(0,5)
+        var volunteersA = parseFloat(slicedResultA)
+        var volunteersB = parseFloat(slicedResultB)
+        return volunteersB - volunteersA;        
+      })
+      console.log(this.results)
       return this.results;
     },
 

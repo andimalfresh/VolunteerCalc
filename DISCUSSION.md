@@ -20,3 +20,17 @@ in the getResults function but that wasnt passing the data that I wanted due to 
 To get the days of the week on to show in the console/results I wrote a function that itterated through the daysCount variable and then set the day of the week equal to the first value in the array for entered in that day (which would be the day of the week). I then passed the result of that function into the getResults function and used a ternary operator to allow the days of the week to be showing if the variable for the Day is set in the records. But if its not, the original formnat is used and the day as a number is displayed.
 
 
+Problem #3
+
+To sort the Results in descending order I took the getResults function and addeed a sort method which containted a function within it. That function would take the each result and slice off the number portion of the result and compare it to the one following it and then reorder them in desending fashion. Keep in mind that this program has its limitations and only works for parameters given as it would need to be refactored to handle larger values.
+
+
+
+
+
+Problem #4 
+
+I would implement data recieved and the 
+results calculated as (JavaScript) Object Literals for better indexing, manulipation, and exhibition. 
+
+I would also write this program using more ECMAScript 6 syntax for better readibility and block-scope and constant variable integration. 
