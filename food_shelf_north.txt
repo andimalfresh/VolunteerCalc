@@ -1,6 +1,6 @@
 volunteers,goal_bags,actual_bags
 10,40,21,MON
-12,33,14,TUES
+12,33,14,TUE
 10,44,12,WED
-15,50,50,THURS
+15,50,50,THU
 18,45,40,FRI
