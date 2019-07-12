@@ -12,12 +12,14 @@ var VolunteersCalculator = module.exports = function(){
     results: null,
     dayOfWeek: null,
 
+     
+
     processFile: function(f, done) {
       var self = this;
       fs.readFile(f, 'utf8', function (err,data) {
         var lines = data.split('\n');
         this.volunteerData = [];
-        for(var line = 0; line < lines.length; line++){
+        for(let line = 0; line < lines.length; line++){
           this.volunteerData.push(lines[line].split(','));
         }
         var daysCount = (this.volunteerData.length-1);
@@ -40,7 +42,7 @@ var VolunteersCalculator = module.exports = function(){
       }
 
       var volunteersNeeded = [];
-      for(var j = 0; j < this.daysCount; j++) {
+      for(let j = 0; j < this.daysCount; j++) {
         var v = (this.getBagsStillNeeded()[j]/this.getBagsStockedPerVolunteer()[j])
         volunteersNeeded.push(v.toFixed(2));
       };
@@ -53,7 +55,7 @@ var VolunteersCalculator = module.exports = function(){
       }
 
      this.dayOfWeek = [];
-     for (var i = 0 ; i < this.daysCount; i++) {
+     for (let i = 0 ; i < this.daysCount; i++) {
         var day = this.data[i][3];
         this.dayOfWeek.push(day);
      }
@@ -62,8 +64,8 @@ var VolunteersCalculator = module.exports = function(){
 
     getResults: function(volunteers) {
       this.results = [];
-      for(var i = 0; i < volunteers.length; i++) { 
-        var result = (volunteers[i]+" additional volunteers are needed on day "+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
+      for(let i = 0; i < volunteers.length; i++) { 
+        var result = (volunteers[i]+' additional volunteers are needed on day '+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
         this.results.push(result);
         console.log(result)
       }
@@ -86,7 +88,7 @@ var VolunteersCalculator = module.exports = function(){
       }
 
       this.bagsStillNeeded = [];
-      for(var i = 0; i < this.daysCount; i++) {
+      for(let i = 0; i < this.daysCount; i++) {
         var bags = (this.data[i][1]- this.data[i][2]);
         this.bagsStillNeeded.push(bags);
       };
@@ -99,11 +101,11 @@ var VolunteersCalculator = module.exports = function(){
       }
 
       this.bagsStockedPerVolunteer = [];
-      for(var i = 0; i < this.daysCount; i++) {
+      for(let i = 0; i < this.daysCount; i++) {
         var bagsStocked = this.data[i][2];
-        var volunteers = this.data[i][0];
+        var volunteersForDay = this.data[i][0];
 
-        this.bagsStockedPerVolunteer.push((bagsStocked/volunteers));
+        this.bagsStockedPerVolunteer.push((bagsStocked/volunteersForDay));
       };
       return this.bagsStockedPerVolunteer;
     }
