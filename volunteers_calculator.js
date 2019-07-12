@@ -54,7 +54,7 @@ var VolunteersCalculator = module.exports = function(){
 
      this.dayOfWeek = [];
      for (var i = 0 ; i < this.daysCount; i++) {
-        var day = this.data[i][0];
+        var day = this.data[i][3];
         this.dayOfWeek.push(day);
      }
       return this.dayOfWeek
@@ -63,18 +63,19 @@ var VolunteersCalculator = module.exports = function(){
     getResults: function(volunteers) {
       this.results = [];
       for(var i = 0; i < volunteers.length; i++) { 
-        var result = (volunteers[i]+" additional volunteers are needed on day "+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
+        var result = (volunteers[i]+" additional volunteers are needed on day "+ (this.daysCount < 3 ? i : this.getDayOfWeek()[i]))
         this.results.push(result);
         console.log(result)
       }
+      if (this.daysCount > 3) {
       this.results.sort( function(a,b){
-        // console.log(a,b)
         var slicedResultA = a.slice(0,5)
         var slicedResultB = b.slice(0,5)
         var volunteersA = parseFloat(slicedResultA)
         var volunteersB = parseFloat(slicedResultB)
         return volunteersB - volunteersA;        
       })
+    }
       console.log(this.results)
       return this.results;
     },
@@ -86,7 +87,7 @@ var VolunteersCalculator = module.exports = function(){
 
       this.bagsStillNeeded = [];
       for(var i = 0; i < this.daysCount; i++) {
-        var bags = (this.data[i][2]- this.data[i][3]);
+        var bags = (this.data[i][1]- this.data[i][2]);
         this.bagsStillNeeded.push(bags);
       };
       return this.bagsStillNeeded;
@@ -99,8 +100,8 @@ var VolunteersCalculator = module.exports = function(){
 
       this.bagsStockedPerVolunteer = [];
       for(var i = 0; i < this.daysCount; i++) {
-        var bagsStocked = this.data[i][3];
-        var volunteers = this.data[i][1];
+        var bagsStocked = this.data[i][2];
+        var volunteers = this.data[i][0];
 
         this.bagsStockedPerVolunteer.push((bagsStocked/volunteers));
       };
