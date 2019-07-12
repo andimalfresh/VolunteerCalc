@@ -22,8 +22,7 @@ Another method I use to make sure that I am writing quality working code is to b
 write working before I add more complex elements and data into what I am working on.
 
 When reviewing others code I like to compare how I think I would write something similar and then try
-and figure out why that person wrote it differently if that's the case. Often you can find ways to write
-cleaner and better code yourself by learning patterns and practices others use.
+and figure out why that person wrote it differently if that's the case. Often you can find ways to write cleaner and better code yourself by learning patterns and practices others use.
 
 <!-- Tell us about a time you made an error and broke something or tell us about a time when you
 found something someone else broke. How did you bring that to your team? How did you
@@ -34,5 +33,6 @@ A Few times at my previous job things would go overlooked or miscommunicated by 
 <!-- Tell us about a time you had to work one-on-one with someone to solve a problem. How did you
 solve it, what did you learn about working with someone that way? -->
 
-For our Project Galvanize Unity we had to create a full stack application in 3 days using Agile and Pair Programming processes. After planning our project with my team my teachers told me I couldn't write any of the back end of the project until the final day. This set up the opportunity to  work on pair programming the backend with Meredith Fontana who was not as adept at building databases as I was at that time.Iit was
-a great exercise in not only communication but explaining the fundamentals of using KNEX and POSTGRESQL. "navigating" the project and doing no "driving"/coding allowed me to solidify processes like migrations and routes due to verbally explaining out each step and the reasons behind the code which in turn made us both stronger developers.  
+For our Project Galvanize Unity we had to create a full stack application in 3 days using Agile and Pair Programming processes. After planning our project with my team my teachers told me I couldn't write any of the back end of the project until the final day. This set up the opportunity to  work on pair programming the backend with Meredith Fontana who was not as adept at building databases as I was at that time.
+
+It was a great exercise in not only communication but explaining the fundamentals of using KNEX and POSTGRESQL. "Navigating" the project and doing no "driving"/coding allowed me to solidify processes like migrations and routes due to verbally explaining out each step and the reasons behind the code which in turn made us both stronger developers.  
