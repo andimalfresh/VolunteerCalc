@@ -87,14 +87,14 @@ To sort the Results in descending order I took the getResults function and added
       you have to put in a .replace() method to take out the carriage returns ::
 
               var result = (volunteers[i]+' additional volunteers are needed on day '+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
-              result = result.replace(/(\r\n|\n|\r)/gm," ");
+              result = result.replace(/(\r\n|\n|\r)/gm,"");
 
-      it took some time as I was trying to do it too the results array at first but then realized the method only works on strings so had to put it up where the the string was being called on before I pushed it into the array. 
+      it took some time as I was trying to call the .replace method on the results array but then realized the method only works on strings so had to put it up where the the string was being called on before I pushed it into the array. 
 
 
 Problem #4
 
-I would make sure I am not reusing variable names volunteer) such as in the get stokedBagsPerVolunteer function and the file processing function. For someone like "us" who has spent a lot of time with this code we know there is a difference between the two but making them slightly different may make it easier for someone else to read. Also assigning different variables helps keep edge cases down especially with using larger scoped variable names.
+I would make sure I am not reusing variable names (volunteer) such as in the get stokedBagsPerVolunteer function and the file processing function. For someone like "us" who has spent a lot of time with this code we know there is a difference between the two but making them slightly different may make it easier for someone else to read. Also assigning different variables helps keep edge cases down especially with using larger scoped variable names.
 
 I also changed my var's to let in my for loops to make sure they are blocked scoped. This is a habit I started in school and it helps me better visually keep track of what my programs are doing.
 
