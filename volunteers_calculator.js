@@ -66,6 +66,7 @@ var VolunteersCalculator = module.exports = function(){
       this.results = [];
       for(let i = 0; i < volunteers.length; i++) { 
         var result = (volunteers[i]+' additional volunteers are needed on day '+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
+        result = result.replace(/(\r\n|\n|\r)/gm,"");
         this.results.push(result);
         console.log(result)
       }
@@ -75,7 +76,8 @@ var VolunteersCalculator = module.exports = function(){
         var slicedResultB = b.slice(0,5)
         var volunteersA = parseFloat(slicedResultA)
         var volunteersB = parseFloat(slicedResultB)
-        return volunteersB - volunteersA;        
+        return volunteersB - volunteersA;
+              
       })
     }
       console.log(this.results)
