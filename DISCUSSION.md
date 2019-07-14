@@ -82,14 +82,14 @@ To sort the Results in descending order I took the getResults function and added
     return this.results;
   },
 
-  *** the Carriage Returns in my initial submission were driving me crazy, but Ive finally got it figured out *** 
-      in the for loop to get the result to put the string together for each result 
-      you have to put in a .replace() method to take out the carriage returns ::
+*** ADDED 7/13/2019 - Carriage return removal solution***   
+      in the for loop to get the result to put the string together, each result variable
+      needs to have a .replace() method called upon it before you push it into the array to take out the carriage returns ::
 
               var result = (volunteers[i]+' additional volunteers are needed on day '+ (this.daysCount > 3 ? this.getDayOfWeek()[i] : i))
               result = result.replace(/(\r\n|\n|\r)/gm,"");
 
-      it took some time as I was trying to call the .replace method on the results array but then realized the method only works on strings so had to put it up where the the string was being called on before I pushed it into the array. 
+      This took some time to figure out. First I had to figure out what carriage returns were and why they were popping up in my code. From there had to find a solution on how to take them out. At first, I was trying to call the .replace method on the results array but then realized the method only works on strings so had to put it up where the the string was being called on before I pushed it into the array. 
 
 
 Problem #4
